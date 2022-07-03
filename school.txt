@@ -9,7 +9,7 @@ describe(){
 
 }
 
-class Team {
+class FeedbackSender{
     constructor(name){
         this.name=name;
         this.players=[];
@@ -29,7 +29,7 @@ describe(){
 
 class Menu{
     constructor(){
-        this.teams=[];
+        this.teamsFeedbackSender=[];
         this.selectedTeam=null;
     }
 }
@@ -57,16 +57,16 @@ start(){
         selection=this.showMianMenuOption();
     }
 
-    alert('Goodbye!');
+    alert('Paalam');
 }
 
 showMianMenuOption(){
     return prompt('
     0) exit
-    1) creat new team
-    2) view team
-    3) delete team
-    4) diaplay all teams
+    1) create new Feedback Sender
+    2) view Investors
+    3) delete Feedback Sender
+    4) diaplay all Feedback Senders Information
 
 ');
 }
@@ -74,8 +74,8 @@ showMianMenuOption(){
 showTeamMenuOptions(teamInfo){
   return prompt('
     0) back 
-    1) create player
-    2) delete player
+    1) create 
+    2) delete 
     -------------------------
     ${teamInfo}
 ');
@@ -83,22 +83,22 @@ showTeamMenuOptions(teamInfo){
 
 displayTeams(){
     let teamString= '';
-    for(let i=0; i<this.teams.lenght; i++){
-        teamString += i + ')' + this.teams[i].name+ '\n';
+    for(let i=0; i<this.teamsFeedbackSender.lenght; i++){
+        teamString += i + ')' + this.teamsFeedbackSender[i].name+ '\n';
     }
     alert(teamString);
 }
 
 createTeam() {
-    let name= promt ('Enter name for new team:');
-    this.team.push(new Team(name));
+    let name= promt ('Enter name for Feedback Sender:');
+    this.teamFeedbackSender.push(new FeedbackSender(nameprompt));
 
 }
 viewTeam(){
-    let index= prompt('Enter the index of team you wish to view:');
-    if(index > -1 && index < this.team.lenght)
-    this.selectedTeam = this.teams[index];
-    let description = 'Team Name:' + this.selectedTeam.name + '\n'
+    let index= prompt('Enter the index of feedback sender you wish to view:');
+    if(index > -1 && index < this.team.FeedbackSender.lenght)
+    this.selectedTeam = this.teamsFeedbackSender[index];
+    let description = 'Feedback Sender:' + this.selectedTeam.name + '\n'
     
 
     for(let i =0; i< this.selectedTeam.players.lenght; i++ ){
