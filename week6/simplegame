@@ -1,0 +1,70 @@
+class card  {
+    constructor(suit,rank,value)
+    this.suit = suit;
+    this.rank = rank;
+    this.value= value;
+}
+
+classDeck{
+    constructor(){
+        this.card=[];
+    }
+}
+createDeck(){
+    let suits=['clubs','diamonds','spades','hearts']
+    let ranks=['ace','2','3','4','5,'6','7','8','9','10','jack','king','queen'];
+    let value=[1,2,3,4,5,6,7,8,9,10,11,12,13]
+    for(let i=0; i<suits.length; i++){
+        for(let j=0; j<ranks.length; j++){
+            this.cards.push(new card(suits[i]),ranks[j],values[j]));
+
+        }
+    }
+}
+shuffleDeck(){
+    Shuffle                                             //
+    for(let i=this.cards.length-1;i>0;i--){
+        let j= Maths.floor(maths.random()* (i+1));
+        let temp= this.card[i];
+        this.card[i]=this.cards[j];
+        this.cards[j]=temp;
+    }
+}
+
+class Player {
+    constructor(name){
+        this.playerName= name;
+        this.playerCards=[];
+    }
+}
+class Hand {
+    constructor(){
+        this.player=[];
+    }
+}
+StaticRange(player, computer) {
+    this.players.push(new Player(player));
+    this.players.push(new Player(computer));
+    let newDeck = newDeck();
+    newDeck.createDeck();
+    newDeck.shuffleDeck();
+    this.players[0].playerCards= newDeck.cards.slice(0,26);
+    this,players[1].playerCards= newDeck.cards.slice(0,26,52);
+}
+
+let playerHands = new Hand();
+playerHands.start('player','computer')
+
+let playerA = playerHands.players[0];
+let playerB = playerHands.players[1];
+let v1=0;
+let v2=0;
+for(let i=0; i<playerHands.players[0].playerCards.length;i++){
+    if(playerA.playerCards[i].value>playerB.playerCards[i].value){
+        v1++;
+    } else {
+        v2++;
+    }
+}
+console.log(`playerA${v1})
+playerB ${v2}`);
